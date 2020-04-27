@@ -1,36 +1,3 @@
-## Git 
-### Working Directory 工作区
-- 工作区就是我们指定的仓库文件夹
-
-### 版本库（Repository）
-工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
-
-Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。   
-
-1. ```git add``` 将文件加入到版本库（缓存区），```git commit```将文件提交到当前分支
-2. 使用```git add```命令后，会在缓存区中创建对应文件副本。也就是说，接下继续修改文件后，再commit,新修改的内容并未提交到当前分支。
-
-### 使用GitHub 作为远程仓库
-Git 是一个分布式版本控制管理器,每个机器都有完整的版本库,每个机器都可以充当服务器的角色,供他人访问。    
-在实际开发中, 都会指定一台机器最为远程仓库充当服务器, 进行协调开发。
-
-#### 使用GitHub作为远程仓库(有GitHub账户)
-1. SSH Key
-查看主目录下有没有.ssh , .ssh 下有没有id_rsa 和 id_rsa.pub。如果有执行 2。如果没有则：  
-```ssh-keygen -t rsa -C "youremail@example.com"```
-2. 登陆GitHub 创建将 id_rsa.pub 中的信息, 粘贴到```Settings>SSH and GPG keys> add SSH key>key ```中。
-    - 为什么GitHub需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送。
-    - 当然，GitHub允许你添加多个Key。假定你有若干电脑，你一会儿在公司提交，一会儿在家里提交，只要把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送了。
-    - 最后友情提示，在GitHub上免费托管的Git仓库，任何人都可以看到喔（但只有你自己才能改）。所以，不要把敏感信息放进去。
-3. 创建GitHub 仓库
-4. 本地与远程同步
-    1.方法一： 创建好了仓库会得到仓库链接。```git clone "https://github.com/3566562908/learngit.git"``` 克隆到本地,本地修改提交后使用 git push 同步。
-    2. 方法二：本地创建对应的仓库，关联远程仓库```git remote add origin https://github.com/3566562908/learngit.git```,首次同步：```git push -u origin master```,本地修改保存后使用 , ```git push```   
-    注： 使用第二种方法，在首次同步时可能因为本地master 和远程master 信息不一致导致失败，可以先使用```git pull origin master ```拷贝一下。
-    
-### 关于仓库地址
-Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。
-=======
 ## 1. Git基础
 
 ### 1.1 版本管理
